@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-ivory font-sans text-ink antialiased; }
+h1, h2, h3 { @apply font-serif; }
+:focus-visible { outline: 2px solid #85662B; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+@layer components {
+  .section { @apply relative mx-auto w-full max-w-5xl px-6 py-20 md:py-28; }
+  .heading { @apply font-script text-5xl text-sage-dark md:text-6xl; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-dark bg-gold-dark px-7 py-3 text-sm tracking-wide text-paper transition hover:bg-ink hover:border-ink disabled:opacity-60; }
+  .btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold-dark px-6 py-2.5 text-sm text-gold-dark transition hover:bg-gold-dark hover:text-paper; }
+  .field { @apply w-full rounded-xl border border-sage/40 bg-paper px-4 py-3 text-ink placeholder:text-ink/40 focus:border-gold-dark; }
+}
